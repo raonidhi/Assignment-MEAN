@@ -1,0 +1,47 @@
+<!--
+including header content which is common for all pages
+-->
+<%- include ../layouts/header.ejs %>	
+		
+<% if (messages.error) { %>
+	<p style="color:red"><%- messages.error %></p>
+<% } %>
+
+<% if (messages.success) { %>
+	<p style="color:green"><%- messages.success %></p>
+<% } %>
+
+<form action="/users/edit/<%= id %>" method="post" name="form1">
+	<div class="form-group">
+        <label>SEM</label>
+          <input type="text" class="form-control" name="sem" placeholder="Sem">
+    </div>
+    <div class="form-group">
+       
+        <label> Subject</label>
+        <input type="text" class="form-control" name="sub" placeholder="Subject">
+    </div>
+    <div class="form-group">
+        <label>ISA-1</label>
+          <input type="text" class="form-control" name="isa1" placeholder="ISA-1">
+    </div>
+     <div class="form-group">
+        <label>ISA-2</label>
+          <input type="text" class="form-control" name="isa2" placeholder="ISA-2">
+    </div> <div class="form-group">
+        <label>Lab practises+Seminar</label>
+          <input type="text" class="form-control" name="lab" placeholder="Lab practises + Seminar">
+    </div> <div class="form-group">
+        <label>Total</label>
+          <input type="text" class="form-control" name="total" placeholder="Total">
+	</div>
+			
+			<input type="submit" name="Submit" value="Edit" />
+		
+	<input type="hidden" name="_method" value="PUT" />
+</form>
+
+<!--
+including footer content which is common for all pages
+-->
+<%- include ../layouts/footer.ejs %>
